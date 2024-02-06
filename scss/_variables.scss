@@ -1,0 +1,151 @@
+/* Colors */
+$black: #2D2D2D ;
+$white: #ffffff;
+$orange: #EA8136;
+$turquoise: #0DD9A8;
+$red: #FF0E0E;
+
+
+$primary: $black;
+$secondary: $white;
+
+$headerSize: 8.7rem;
+$headerSize_xl: 9.0rem;
+$footerSize: 33rem;
+
+/* Breakpoints */
+$screen-xs: 0px !default;
+$screen-sm: 640px !default;
+$screen-md: 768px !default;
+$screen-lg: 1024px !default;
+$screen-xl: 1280px !default;
+$screen-xxl: 1536px !default;
+
+/* Mixins */
+
+@mixin placeholder {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (min-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $screen-xxl) {
+    @content;
+  }
+}
+
+@mixin m-xs {
+  @media (max-width: ($screen-xs - 1)) {
+    @content;
+  }
+}
+
+@mixin m-sm {
+  @media (max-width: ($screen-sm - 1)) {
+    @content;
+  }
+}
+
+@mixin m-md {
+  @media (max-width: ($screen-md - 1)) {
+    @content;
+  }
+}
+
+@mixin m-lg {
+  @media (max-width: ($screen-lg - 1)) {
+    @content;
+  }
+}
+
+@mixin m-xl {
+  @media (max-width: ($screen-xl - 1)) {
+    @content;
+  }
+}
+
+@mixin m-xxl {
+  @media (max-width: ($screen-xxl - 1)) {
+    @content;
+  }
+}
+
+@mixin dynamicSize($size) {
+  @if $size==xs {
+    @content;
+  }
+
+  @else if $size==sm {
+    @include sm {
+      @content;
+    }
+  }
+
+  @else if $size==md {
+    @include md {
+      @content;
+    }
+  }
+
+  @else if $size==lg {
+    @include lg {
+      @content;
+    }
+  }
+
+  @else if $size==xl {
+    @include xl {
+      @content;
+    }
+  }
+
+  @else if $size==xxl {
+    @include xxl {
+      @content;
+    }
+  }
+}
+
+$sizes: (xs, sm, md, lg, xl, xxl);

@@ -1,0 +1,46 @@
+[data-scroll-container] {
+  width: 1200rem;
+  @include m-lg{
+    width: 100%;
+  }
+}
+
+.page-id-20 [data-scroll-container] {
+  width: 100%;
+}
+.wrap {
+  display: flex;
+  @include m-lg{
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+$section-positions: (
+  home__rivieres: 56rem,
+  home__videoPoster: 40rem,
+  home__jerry: 64rem,
+  home__makeMe: 90rem,
+  home__suite: 175rem,
+  home__poesie: 179rem,
+  home__end: 198rem
+);
+  
+.section {
+  position: relative;
+  display: flex;
+  height: 80vh;
+  @include m-lg {
+    height: initial;
+    flex-direction: column;
+  }
+
+  @each $class, $left in $section-positions {
+    &.#{$class} {
+      left: $left;
+      @include m-lg {
+        left: 0;
+      }
+    }
+  }
+}

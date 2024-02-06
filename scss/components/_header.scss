@@ -1,0 +1,303 @@
+.page-id-20 .header{
+  &__content{
+    margin-top: initial;
+  }
+  &__menu__nav{
+    color: $primary;
+  }
+  a:hover, .current-menu-item a{
+    color: $white;
+  }
+  &__title {
+    color: $black;
+  }
+  &__burger {
+    .icon {
+      span {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+  $header: &;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: $white;
+  &__title {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    text-transform: lowercase;
+  }
+  &__content{
+    background: transparent;
+    display: flex;
+    margin-top: 9vh;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 2.8rem 4rem 5.6rem 4rem;
+    @include m-lg{
+      margin-top: initial;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: initial;
+      width: 100%;
+    }
+    & > * + * {
+      margin-left: 1.5rem;
+    }
+  }
+  &__menu{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    @include m-lg{
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba($black, 0.75);
+      overflow-y: auto;
+      z-index: 200;
+      transition: 0.5s transform;
+      opacity: 0;
+      pointer-events: none;
+      transition: all ease 0.2s;
+      margin: 0;
+      &.--active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      nav{
+        @include m-lg{
+          position: relative;
+          width: 100%;
+          max-width: 100%;
+          overflow-y: auto;
+        }
+      }
+    }
+    &__menuOne{
+      display: flex;
+      width: 91%;
+      position: absolute;
+      justify-content: space-between;
+      @include m-lg{
+        position: initial;
+        width: 100%;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: initial;
+        background-color: $white;
+      }
+    }
+    &__mobile{
+      display: none;
+      @include m-lg{
+        display: flex;
+      }
+    }
+    &__desktop{
+      display: flex;
+      @include m-lg{
+        display: none;
+      }
+    }
+    &__top{
+      display: none;
+      background-color: $white;
+      padding: 2rem;
+      align-items: center;
+      justify-content: flex-end;
+      @include m-lg{
+        transform: translateX(-100%);
+        display: flex;
+        transition: transform ease 0.5s;
+      }
+      &__btn{
+        display: flex;
+        a{
+          padding: 1.1rem 1.7rem;
+        }
+        & > * + * {
+          margin-left: 1rem;
+        }
+      }
+      &.--active {
+        opacity: 1;
+          transform: translateX(0);
+      }
+    }
+    &__nav{
+      display: flex;
+      width: max-content;
+      color: $white;
+      li {
+        font-size: 1.7rem;
+        font-weight: 300;
+        @include m-lg{
+          color: $primary;
+        }
+      }
+      & > * + * {
+        @include m-lg{
+          margin-top: 3.5rem;
+        }
+        @include lg{
+          margin-left: 2.5rem;
+        }
+      }
+      @include m-lg{
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: $white;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform ease 0.5s;
+        font-size: 2.1rem;
+        @include m-lg{
+          height: initial;
+
+        }
+        &.--active {
+          opacity: 1;
+            transform: translateX(0);
+        }
+      }
+      .current-menu-parent, .current_page_parent {
+        a{
+          color: $primary;
+        }
+        .sub-menu{
+          .current-menu-item a{
+            color: $primary;
+          }
+        }
+        .current-menu-item{
+          a{
+            color: $primary;
+          }
+        }
+      }
+      a:hover, .current-menu-item a{
+        color: #c2c2c2
+      }
+    }
+  }
+  &__burger {
+    position: relative;
+    z-index: 100;
+    padding: 2rem;
+    background: none;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-height: 2.6rem;
+    @include lg {
+      display: none;
+    }
+    &.--active{
+      display: none;
+    }
+    .icon {
+      width: 3rem;
+      span {
+        background: $white;
+        display: block;
+        height: 0.1rem;
+        width: 100%;
+        transition: 0.3s margin;
+        @include m-lg {
+          background: $white;
+        }
+        @include md {
+          transition: 0.2s margin;
+        }
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    @include m-lg {
+      &.--active {
+        display: none;
+      }
+    }
+  }
+  &__close {
+    z-index: 1;
+    top: 2rem;
+    background: $black;
+    right: 100%;
+    width: 2.4rem;
+    height: 2.4rem;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.0226 1.09876L1.06066 23.0607L0 22L21.9619 0.0380963L23.0226 1.09876Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.0226 23.0226L0.0606601 1.06066L1.12132 0L23.0832 21.9619L22.0226 23.0226Z' fill='white'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s all;
+    @include lg {
+      display: none;
+    }
+    &.--active {
+      right: 2.5rem;
+      opacity: 1;
+    }
+  }
+  &__left{
+    display: flex;
+    align-items: center;
+    & > * + * {
+      margin-left: 1.4rem;
+    }
+    @include lg{
+      display: none;
+    }
+  }
+  &__logo {
+    display: flex;
+    width: 12.3rem;
+    @include lg{
+      width: 16.9rem;
+    }
+  }
+  &__right{
+    display: flex;
+    align-items: center;
+    & > * + * {
+      margin-left: 1.3rem;
+    }
+    .btn{
+      &:first-child{
+        @include m-lg{
+          display: none;
+        }
+      }
+    }
+
+  }
+}

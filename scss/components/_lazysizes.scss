@@ -1,0 +1,156 @@
+.lazyload-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  .lazyload,
+  .lazyloading {
+  }
+
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .masks {
+    font-size: 0;
+
+    .mask {
+      position: relative;
+      display: none;
+      width: 100%;
+      max-width: 100%;
+      z-index: -1;
+
+      @media (min-width: $screen-xl) {
+        &.mask-xl {
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: $screen-xl - 1) {
+        &.mask-xl {
+          display: none;
+        }
+
+        &.mask-lg {
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: $screen-lg) {
+        &.mask-lg {
+          display: none;
+        }
+
+        &.mask-md {
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: $screen-md) {
+        &.mask-md {
+          display: none;
+        }
+
+        &.mask-sm {
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: $screen-sm - 1) {
+        &.mask-sm {
+          display: none;
+        }
+
+        &.mask-xs {
+          display: inline-block;
+        }
+      }
+
+      /** FOR RETINA DISPLAY **/
+
+      @media(-webkit-min-device-pixel-ratio: 1.5) and (min-width: $screen-xl),
+      (min-resolution: 144dpi) and (min-width: $screen-xl) {
+        &.mask-xl {
+          display: none;
+        }
+
+        &.mask-xl-2x {
+          display: inline-block;
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 1.5) and (max-width: $screen-xl - 1),
+      (min-resolution: 144dpi) and (max-width: $screen-xl - 1) {
+
+        &.mask-xl-2x,
+        &.mask-lg {
+          display: none;
+        }
+
+        &.mask-lg-2x {
+          display: inline-block;
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 1.5) and (max-width: $screen-lg),
+      (min-resolution: 144dpi) and (max-width: $screen-lg) {
+
+        &.mask-lg-2x,
+        &.mask-md {
+          display: none;
+        }
+
+        &.mask-md-2x {
+          display: inline-block;
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 1.5) and (max-width: $screen-md),
+      (min-resolution: 144dpi) and (max-width: $screen-md) {
+
+        &.mask-md-2x,
+        &.mask-sm {
+          display: none;
+        }
+
+        &.mask-sm-2x {
+          display: inline-block;
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 1.5) and (max-width: $screen-sm - 1),
+      (min-resolution: 144dpi) and (max-width: $screen-sm - 1) {
+
+        &.mask-sm-2x,
+        &.mask-xs {
+          display: none;
+        }
+
+        &.mask-xs-2x {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &.auto-width {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/*********************\
+     END LAZYLOAD
+\*********************/
+

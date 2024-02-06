@@ -1,0 +1,118 @@
+.presse{
+  background-image: url(../../images/bg-press.png);
+  background-size: cover;
+  background-position: center;
+  &__articles{
+    padding: 10rem;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 6rem;
+    @include m-xl{
+      row-gap: 3rem;
+    }
+    @include m-lg{
+      display: flex;
+    }
+    &__article{
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      align-items: center;
+      width: 40rem;
+      @include m-xl{
+        width: 30rem;
+      }
+      .citation, .duree{
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 2.2rem;
+        text-align: center;
+        @include m-xl{
+          font-size: 1.3rem;
+        }
+      }
+      .magazine{
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.2rem;
+        @include m-xl{
+          font-size: 1.3rem;
+        }
+      }
+      .duree{
+        font-size: 1.3rem;
+      }
+      &.centered {
+        grid-column: span 3;
+      }
+    }
+    .article-group {
+      display: flex;
+      @include m-lg{
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      &:last-child {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  .list{
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+  &__presse, &__podcast{
+    padding-left: 25rem;
+    padding-right: 25rem;
+    display: flex;
+    flex-direction: column;
+    @include m-xl{
+      padding-left: 10rem;
+      padding-right: 10rem;
+    }
+    @include m-md{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    &__title{
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 3rem;
+      line-height: 1.3rem;
+      text-transform: uppercase;
+      color: #000;
+      display: flex;
+      justify-content: center;
+    }
+    .flex{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .titre, .magazine{
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.4rem;
+        @include m-md{
+          font-size: 0.8rem;
+        }
+      }
+      .points {
+        flex-grow: 1;
+        border-bottom: 1px dotted #000; 
+        margin: 0 0.2rem; 
+      }
+    }
+  }
+  &__podcast{
+    margin-bottom: 20rem;
+  }
+}
