@@ -1,0 +1,15 @@
+section {
+  width: max-content;
+  @include m-lg {
+    height: 100vh;
+    width: initial;
+    margin-top: initial;
+  }
+  &.home {
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+  &.videoPoster {
+    margin-left: 8rem;
+  }
+}

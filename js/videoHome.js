@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         var observer = new IntersectionObserver(
           function (entries) {
             if (entries[0].intersectionRatio > 0) {
-              $video.play();
+              //$video.play();
+              $video.pause();
+            }
+            else {
+              $video.pause();
             }
           }, {
             threshold: [0.5]

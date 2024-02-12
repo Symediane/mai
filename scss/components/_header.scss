@@ -24,11 +24,28 @@
   position: relative;
   $header: &;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: 100;
-  background: $white;
+  transition: 0.5s all;
+
+  &.--hide{
+    opacity: 0;
+    transform: translateY(-1vw);
+    &::after{
+      opacity: 1;
+    }
+  }
+  &:hover{
+    opacity: 1;
+    transform: translateY(0);
+    .header__content{
+      &::after{
+        opacity: 1;
+      }
+    }
+  }
   &__title {
     position: absolute;
     bottom: 0%;
@@ -36,14 +53,24 @@
     text-transform: lowercase;
   }
   &__content{
-    background: transparent;
     display: flex;
-    margin-top: 9vh;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    padding: 2.8rem 4rem 5.6rem 4rem;
+    padding: 1.5vw 3vw 4.5vw;
+    z-index: 3;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.00) 100%);
+      opacity: 0;
+      transition: 0.5s all;
+    }
     @include m-lg{
       margin-top: initial;
       flex-direction: column;
@@ -59,6 +86,14 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
+    @include lg{
+      font-size: 1.5rem;
+    }
+    @include xl{
+      font-size: 1.7rem;
+    }
     @include m-lg{
       left: 0;
       top: 0;
@@ -92,12 +127,11 @@
     }
     &__menuOne{
       display: flex;
-      width: 91%;
+      width: 100%;
       position: absolute;
       justify-content: space-between;
       @include m-lg{
         position: initial;
-        width: 100%;
         flex-direction: column;
         height: 100vh;
         justify-content: initial;
@@ -146,7 +180,7 @@
       width: max-content;
       color: $white;
       li {
-        font-size: 1.7rem;
+
         font-weight: 300;
         @include m-lg{
           color: $primary;
@@ -198,10 +232,11 @@
           }
         }
       }
-      a:hover, .current-menu-item a{
-        color: #c2c2c2
-      }
+
     }
+  }
+  a{
+    color: $white;
   }
   &__burger {
     position: relative;

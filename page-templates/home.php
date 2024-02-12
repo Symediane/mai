@@ -10,9 +10,7 @@
 
 get_header();
 ?>
-<div id="main-content" class="main-content">
   <div class="wrap" data-scroll-section>
-    <div class="black-bar top-bar"></div>
     <?php if (have_rows('blocs')) {
       while (have_rows('blocs')) {
         the_row();
@@ -39,8 +37,6 @@ get_header();
       }
     }
     ?>
-    <div class="black-bar bottom-bar"></div>
   </div>
-</div>
 <?php
 get_footer();

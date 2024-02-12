@@ -1,5 +1,5 @@
 [data-scroll-container] {
-  width: 1200rem;
+  width: 100%;
   @include m-lg{
     width: 100%;
   }
@@ -17,19 +17,19 @@
 }
 
 $section-positions: (
-  home__rivieres: 56rem,
-  home__videoPoster: 40rem,
-  home__jerry: 64rem,
-  home__makeMe: 90rem,
-  home__suite: 175rem,
-  home__poesie: 179rem,
-  home__end: 198rem
+  home__rivieres: 25vw,
+  home__videoPoster: 33vw,
+  home__jerry: 52vw,
+  home__makeMe: 62vw,
+  home__suite: 92vw,
+  home__poesie: 102vw,
+  home__end: 92vw
 );
-  
+
 .section {
   position: relative;
   display: flex;
-  height: 80vh;
+  //height: 80vh;
   @include m-lg {
     height: initial;
     flex-direction: column;

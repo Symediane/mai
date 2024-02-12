@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
    const $header = document.querySelector(".header");
-   console.log($header); 
    const $menu = document.querySelector(".header__menu");
    const $menu_top = document.querySelector(".header__menu__top");
    const $nav = document.querySelector(".header__menu__nav");

@@ -1,8 +1,8 @@
-<?php 
+<?php
 $first_block = get_sub_field('premier_block');
 $firstTexte = $first_block['texte'];
 $imagesGroupOne = $first_block['image_video'];
-$videoOne = $imagesGroupOne['video'];  
+$videoOne = $imagesGroupOne['video'];
 $imageOne = $imagesGroupOne['image'];
 $lien_externeOne = $imagesGroupOne['lien_externe'];
 
@@ -39,7 +39,7 @@ $link = $troisieme_block['lien'];
               <video src="<?= $videoOne['url']; ?>" class="video" muted="" loop="" playsinline="">
                 <track src="" kind="captions">
               </video>
-              <div class="volume-controls">  
+              <div class="volume-controls">
                 <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
                 <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
               </div>
@@ -81,7 +81,7 @@ $link = $troisieme_block['lien'];
               <video src="<?= $videoTwo['url']; ?>" class="video" muted="" loop="" playsinline="">
                 <track src="" kind="captions">
               </video>
-              <div class="volume-controls">  
+              <div class="volume-controls">
                 <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
                 <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
               </div>
@@ -120,7 +120,7 @@ $link = $troisieme_block['lien'];
               <video src="<?= $videoThird['url']; ?>" class="video" muted="" loop="" playsinline="">
                 <track src="" kind="captions">
               </video>
-              <div class="volume-controls">  
+              <div class="volume-controls">
                 <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
                 <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
               </div>
@@ -148,10 +148,10 @@ $link = $troisieme_block['lien'];
         <div class="texte">
           <?= $troisiemeTexte; ?>
         </div>
-        <div class="link">
-          <?= $link; ?>
-        </div>
       </div>
     </div>
+    <div class="link">
+          <?= $link; ?>
+        </div>
   </div>
 </section>

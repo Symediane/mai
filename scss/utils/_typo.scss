@@ -7,15 +7,15 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   scroll-padding-top: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-y: hidden;
   margin-top: 0 !important;
-  @include m-lg{
+  @include m-lg {
     overflow-x: hidden;
     overflow-y: auto;
   }
 }
-.page-id-20{
+.page-id-20 {
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -26,7 +26,7 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   background-color: #ffffff;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: $black;
   position: relative;
   overflow-x: auto;
@@ -34,12 +34,12 @@ body {
   text-shadow: 0px 64px 34px rgba(255, 255, 255, 0.25);
   font-size: 0.95vw;
   font-style: normal;
-  font-weight: 300;
-  line-height: 2.4rem;  
-  @include m-xl{
+  font-weight: 200;
+  line-height: 1.4;
+  @include m-xl {
     line-height: 2rem;
   }
-  @include m-lg{
+  @include m-lg {
     overflow-x: hidden;
     overflow-y: auto;
     font-size: 1.3rem;
@@ -68,9 +68,9 @@ h6 {
   line-height: 110%;
 }
 
-h1, 
+h1,
 .h1 {
-  font-family: "Poppins";;
+  font-family: "Poppins";
   font-size: 1.7rem;
   position: absolute;
   font-style: normal;
@@ -81,7 +81,7 @@ h1,
 
 h2,
 .h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-size: 3rem;
   font-weight: 500;
@@ -98,7 +98,7 @@ h2,
 
 h3,
 .h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.2rem;
   @include lg {
     font-size: 2.8rem;
@@ -111,11 +111,11 @@ h3,
 
 h4,
 .h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.7rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 2.6rem; 
+  line-height: 2.6rem;
   @include lg {
     font-size: 2.4rem;
   }
@@ -123,7 +123,7 @@ h4,
 
 button {
   touch-action: manipulation;
-  -webkit-appearance : none;
+  -webkit-appearance: none;
 }
 sup {
   font-size: 0.7em;
@@ -133,7 +133,6 @@ sup {
 }
 p {
   margin: 0;
-  line-height: 160%;
   a {
     text-decoration: none;
     &:hover {
@@ -145,16 +144,8 @@ b,
 strong,
 .bold {
   font-family: "Libre Baskerville";
-  font-size: 1.7rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 2.2rem;
-  @include m-lg {
-    font-size: 1.5rem;
-  }
-  @include m-md{
-    font-size: 1.3rem;
-  }
 }
 img {
   display: block;

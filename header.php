@@ -17,7 +17,7 @@
  */
 $enable_horizontal_scroll = true;
 if (is_page(20)) {
-    $enable_horizontal_scroll = false; 
+    $enable_horizontal_scroll = false;
 }
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,6 @@ if (is_page(20)) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
   <?php wp_head(); ?>
   <?php if (is_user_logged_in()) { ?>
   <style>
@@ -66,26 +65,16 @@ if (is_page(20)) {
   }
   </style>
   <?php } ?>
-  <!-- Google Tag Manager -->
-  <!-- End Google Tag Manager -->
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- <div class="cursor"></div>
-  <div class="cursor2"></div> -->
-  <!-- Google Tag Manager (noscript) -->
-  <!-- End Google Tag Manager (noscript) -->
   <?php
     $preheader = get_field('preheader', 'option');
     $phone = get_field('phone', 'option');
     $lien_contact = get_field('lien_contact', 'option');
   ?>
-  <?php if ($enable_horizontal_scroll) { ?>
-    <main data-scroll-container>
-
-    <?php } else { ?>
-      <main>
-      <?php } ?>
+  <main<?= $enable_horizontal_scroll ? " data-scroll-container" : "" ?>>
+  <div id="main-content" class="main-content">
   <header class="header" >
     <div class="header__content container">
       <div class="header__left">
@@ -105,12 +94,11 @@ if (is_page(20)) {
           </div>
             <div class="header__menu__menuOne" data-block-section>
               <?php wp_nav_menu(['theme_location' => 'main', 'menu_class' => 'header__menu__nav', 'container' => false]); ?>
-              <h1 class="header__title">mai</h1>
+              <a href="<?= get_home_url(); ?>">mai</a>
               <?php wp_nav_menu(['theme_location' => 'secondaire', 'menu_class' => 'header__menu__nav --secondary', 'container' => false]); ?>
             </div>
         </nav>
       </div>
     </div>
   </header>
-  <?php wp_footer(); ?>
-</body>
+
