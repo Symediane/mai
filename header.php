@@ -15,10 +15,6 @@
  * @subpackage Symediane
  * @since Symediane 1.0
  */
-$enable_horizontal_scroll = true;
-if (is_page(20)) {
-    $enable_horizontal_scroll = false;
-}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -59,9 +55,12 @@ if (is_page(20)) {
     }
 
     #wpadminbar {
-      display: none;
+      display: none !important;
     }
   }
+  #wpadminbar:not(.--show) {
+      display: none;
+    }
   </style>
   <?php } ?>
 </head>
@@ -72,7 +71,7 @@ if (is_page(20)) {
     $phone = get_field('phone', 'option');
     $lien_contact = get_field('lien_contact', 'option');
   ?>
-  <main<?= $enable_horizontal_scroll ? " data-scroll-container" : " class='vertical-scroll'" ?>>
+  <main<?= is_front_page() ? " data-scroll-container" : " class='vertical-scroll'" ?>>
   <div id="main-content" class="main-content">
   <header class="header" >
     <div class="header__content container">

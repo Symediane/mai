@@ -139,9 +139,14 @@ p {
 b,
 strong,
 .bold {
-  font-family: "Libre Baskerville";
-  font-style: normal;
+  //font-family: "Libre Baskerville";
   font-weight: 500;
+}
+em{
+  font-family: "Libre Baskerville";
+  font-weight: 500;
+  font-style: normal;
+  white-space: nowrap;
 }
 img {
   display: block;
