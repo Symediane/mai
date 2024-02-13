@@ -75,6 +75,7 @@
   <div id="main-content" class="main-content">
   <header class="header" >
     <div class="header__content container">
+      <a href="<?= get_home_url(); ?>" class="logo">mai</a>
       <div class="header__left">
         <button class="header__burger" aria-label="Menu">
           <span class="icon">
@@ -85,6 +86,7 @@
         </button>
       </div>
       <div class="header__menu">
+
         <nav>
           <div class="header__menu__top">
             <div class="header__close"></div>
@@ -92,7 +94,7 @@
           </div>
             <div class="header__menu__menuOne" data-block-section>
               <?php wp_nav_menu(['theme_location' => 'main', 'menu_class' => 'header__menu__nav', 'container' => false]); ?>
-              <a href="<?= get_home_url(); ?>" class="logo">mai</a>
+
               <?php wp_nav_menu(['theme_location' => 'secondaire', 'menu_class' => 'header__menu__nav --secondary', 'container' => false]); ?>
             </div>
         </nav>

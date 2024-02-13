@@ -1,7 +1,7 @@
 .vertical-scroll {
 
   @include lg {
-    height: 100vh;
+    height: 100svh;
     .main-content{
       width: 100vw;
       overflow-y: auto;

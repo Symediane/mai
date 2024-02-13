@@ -1,9 +1,6 @@
 section {
-  width: max-content;
-  @include m-lg {
-    height: 100vh;
-    width: initial;
-    margin-top: initial;
+  @include lg{
+    width: max-content;
   }
   &.home {
     min-width: 100vw;

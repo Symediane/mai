@@ -1,5 +1,5 @@
 main {
-  background: black;
+  background: $white;
   position: relative;
   @include lg {
     display: flex;
@@ -9,8 +9,8 @@ main {
     height: 100%;
     .main-content{
       height: 40.5vw;
-      max-height: 100vh;
-      background: white;
+      max-height: 100svh;
+      background: $white;
     }
     .wrap{
       overflow: hidden;
@@ -34,7 +34,6 @@ main {
         }
       }
     }
-
   }
 }
 .main-content{

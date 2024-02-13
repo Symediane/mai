@@ -8,6 +8,14 @@
   z-index: 100;
   transition: 0.5s all;
 
+  @include m-lg{
+    background: transparent;
+    width: 100vw;
+    position: fixed;
+    &.--white{
+      background: $white;
+    }
+  }
   &.--hide{
     opacity: 0;
     transform: translateY(-1vw);
@@ -15,24 +23,39 @@
       opacity: 1;
     }
   }
-  &:hover{
-    opacity: 1;
-    transform: translateY(0);
+  @include lg{
+    &:hover{
+      opacity: 1;
+      transform: translateY(0);
 
-    a{
-      color: $white;
-    }
-    .header__content{
-      &::after{
-        opacity: 1;
+      a{
+        color: $white;
+      }
+      .header__content{
+        &::after{
+          opacity: 1;
+        }
       }
     }
   }
+
   .logo{
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 1.7rem;
+    z-index: 1000;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+    @include lg{
+      top: 0;
+      font-size: 1.5rem;
+      height: 100%;
+    }
+    @include xl{
+      font-size: 1.7rem;
+    }
   }
   &__title {
     position: absolute;
@@ -45,20 +68,23 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    padding: 1.5vw 3vw 4.5vw;
+    position: relative;
+    padding: 2vw 3vw;
     z-index: 3;
-    &::after{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0.00) 100%);
-      opacity: 0;
-      transition: 0.5s all;
+    @include lg{
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0.00) 100%);
+        opacity: 0;
+        transition: 0.5s all;
+      }
     }
+
     @include m-lg{
       margin-top: initial;
       flex-direction: column;
@@ -86,7 +112,7 @@
       left: 0;
       top: 0;
       width: 100%;
-      height: 100vh;
+      height: 100svh;
       background: rgba($black, 0.75);
       overflow-y: auto;
       z-index: 200;
@@ -95,6 +121,7 @@
       pointer-events: none;
       transition: all ease 0.2s;
       margin: 0;
+      position: absolute;
       &.--active {
         opacity: 1;
         pointer-events: all;
@@ -116,12 +143,12 @@
     &__menuOne{
       display: flex;
       width: 100%;
-      position: absolute;
+
       justify-content: space-between;
       @include m-lg{
-        position: initial;
         flex-direction: column;
-        height: 100vh;
+        height: calc(100svh - 6.4rem);
+        overflow-y: auto;
         justify-content: initial;
         background-color: $white;
       }
@@ -145,7 +172,6 @@
       align-items: center;
       justify-content: flex-end;
       @include m-lg{
-        transform: translateX(-100%);
         display: flex;
         transition: transform ease 0.5s;
       }
@@ -160,7 +186,6 @@
       }
       &.--active {
         opacity: 1;
-          transform: translateX(0);
       }
     }
     &__nav{
@@ -188,12 +213,12 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
+        height: 100svh;
         background: $white;
         display: flex;
         align-items: center;
         padding: 2rem;
-        transform: translateX(-100%);
+        transform: translateX(-10%);
         transition: transform ease 0.5s;
         font-size: 2.1rem;
         @include m-lg{
@@ -247,14 +272,11 @@
     .icon {
       width: 3rem;
       span {
-        background: $white;
+        background: $black;
         display: block;
         height: 0.1rem;
         width: 100%;
         transition: 0.3s margin;
-        @include m-lg {
-          background: $white;
-        }
         @include md {
           transition: 0.2s margin;
         }

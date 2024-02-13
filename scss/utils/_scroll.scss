@@ -3,6 +3,8 @@
   @include m-lg{
     flex-direction: column;
     width: 100%;
+    overflow-x: hidden;
+    transform: none!important;
   }
 }
 
