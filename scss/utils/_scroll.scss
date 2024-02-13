@@ -1,8 +1,5 @@
 [data-scroll-container] {
   width: 100%;
-  @include m-lg{
-    width: 100%;
-  }
 }
 
 .page-id-20 [data-scroll-container] {
@@ -18,12 +15,12 @@
 
 $section-positions: (
   home__rivieres: 25vw,
-  home__videoPoster: 33vw,
-  home__jerry: 52vw,
-  home__makeMe: 62vw,
-  home__suite: 92vw,
-  home__poesie: 102vw,
-  home__end: 92vw
+  home__videoPoster: 7vw,
+  home__jerry: 19vw,
+  home__makeMe: 9vw,
+  home__suite: 35vw,
+  home__poesie: 0,
+  home__end: 7vw
 );
 
 .section {
@@ -37,9 +34,9 @@ $section-positions: (
 
   @each $class, $left in $section-positions {
     &.#{$class} {
-      left: $left;
-      @include m-lg {
-        left: 0;
+
+      @include lg {
+        padding-left: $left;
       }
     }
   }

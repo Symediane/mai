@@ -5,17 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     $videos.forEach(($video) => {
       setTimeout(() => {
         var observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].intersectionRatio > 0) {
-              //$video.play();
+          entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              $video.play();
+            } else {
               $video.pause();
             }
-            else {
-              $video.pause();
-            }
-          }, {
-            threshold: [0.5]
-          }
+            });
+          },
+          { threshold: [0.5] }
         );
         observer.observe($video);
 

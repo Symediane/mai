@@ -140,7 +140,7 @@
       background-repeat: no-repeat;
       content: '';
       position: absolute;
-      left: -4%;
+      left: -9%;
       width: 256%;
       z-index: -1;
       height: 100%;
@@ -243,7 +243,11 @@
     }
   }
   &__videoPoster {
-    gap: 5.2vw;
+    & > * + * {
+      @include lg{
+        margin-left: 7.5vw;
+      }
+    }
     &::before {
       @include m-lg {
         display: none;
@@ -327,7 +331,7 @@
       background-repeat: no-repeat;
       content: '';
       position: absolute;
-      left: -103%;
+      left: -113%;
       opacity: 1;
       width: 480%;
       z-index: -1;
@@ -338,6 +342,9 @@
     }
     &__content{
       padding-bottom: 3rem;
+      @include lg{
+        padding-bottom: 1.5vw;
+      }
       @include m-lg{
         text-align: center;
         display: flex;
@@ -418,6 +425,10 @@
     &__secondBlock {
       grid-area: 2 / 1 / 3 / 3;
       font-weight: 400;
+      @include lg{
+        height: 14vw;
+        position: relative;
+      }
       @include m-lg{
         display: flex;
         justify-content: center;
@@ -425,8 +436,15 @@
       .flex {
         display: flex;
         position: relative;
-        left: 30%;
-        gap: 4vw;
+        left: 18vw;
+        @include lg {
+          height: 100%;
+        }
+        & > * + * {
+          @include lg {
+            margin-left: 7vw;
+          }
+        }
         @include m-lg {
           flex-direction: column;
           left: initial;
@@ -436,6 +454,11 @@
           width: 32vw;
           @include m-lg{
             width: 91vw;
+          }
+        }
+        .video-container {
+          @include lg{
+            height: 100%;
           }
         }
         .imageVideo {
@@ -451,7 +474,8 @@
           video {
             width: 10vw;
             @include lg{
-              max-height: 14vw;
+              max-height: 15.5vw;
+              height: 100%;
             }
             @include m-lg {
               width: 100%;
@@ -461,7 +485,7 @@
       }
     }
     &__thirdBlock {
-      left: 10%;
+      left: 7vw;
       position: relative;
       @include m-lg {
         left: initial;
@@ -493,6 +517,7 @@
           align-items: flex-end;
           .texte {
             color: $primary;
+            font-weight: 400;
             @include lg{
               text-align: right;
               font-size: 0.8vw;
@@ -507,16 +532,16 @@
       .link {
         position: absolute;
         text-align: center;
+        z-index: 10;
         @include lg{
-          right: -11vw;
-          top: 19vw;
+          right: -10vw;
+          top: 19.5vw;
         }
       }
     }
   }
   &__suite {
     align-items: center;
-    gap: 5rem;
     &::before {
       background-image: url('../../images/last_bg.jpg');
       background-size: contain;
@@ -524,12 +549,12 @@
       background-repeat: no-repeat;
       content: '';
       position: absolute;
-      left: 0;
+      left: 8vw;
       opacity: 1;
-      width: 158%;
-      top: 0%;
+      width: 200vw;
+      top: 3%;
       z-index: -1;
-      height: 104%;
+      height: 100%;
       @include m-lg {
         // background-image: url('../../images/03-mobile.jpg');
         display: none;
@@ -547,6 +572,10 @@
     &__texteSuite {
       display: flex;
       align-items: center;
+      position: relative;
+      @include lg{
+        margin-right: 3vw;
+      }
       @include m-lg{
         flex-direction: column;
         gap: 3rem;
@@ -558,11 +587,14 @@
         background-repeat: no-repeat;
         content: '';
         position: absolute;
-        width: 5rem;
-        right: 102%;
-        height: 4rem;
+        width: 1.8vw;
+        left: -4vw;
+        height: 2vw;
         opacity: 1;
         z-index: 1;
+        @include lg{
+          background-size: contain;
+        }
         @include m-lg {
           width: 5rem;
           height: 2rem;
@@ -573,7 +605,7 @@
       }
     }
     .image {
-      width: 58rem;
+      width: 29vw;
       @include m-md{
         width: 100%;
       }
@@ -584,9 +616,14 @@
       }
     }
     &__texte {
-      margin-left: 40rem;
-      width: 25vw;
-      text-align: right;
+      @include lg{
+        margin-left: 25vw;
+        margin-right: 6vw;
+        width: 23vw;
+        text-align: right;
+      }
+
+
       @include m-lg {
         margin-left: initial;
         text-align: center;
@@ -604,7 +641,7 @@
     align-items: center;
     justify-content: center;
     .image {
-      width: 210rem;
+      width: 100vw;
       height: 100%;
       object-fit: cover;
       background: $black;
@@ -623,9 +660,13 @@
     }
     &__poeme {
       position: absolute;
-      left: 3%;
-      top: 16%;
       color: $white;
+      @include lg{
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
       @include m-lg{
         left: 0;
         width: 100%;
@@ -636,17 +677,26 @@
   }
 
   &__end {
+    padding-right: 7vw;
     align-items: center;
-    gap: 6rem;
-    margin-top: 6rem;
-    margin-bottom: 12rem;
+    @include lg{
+      width: 65vw;
+    }
+    & > * + * {
+      @include lg{
+        margin-left: 3vw;
+      }
+    }
     .image{
+      @include lg{
+        width: 15vw;
+      }
       @include m-lg{
         width: 20rem;
       }
     }
     &__texte{
-      width: 12vw;
+      width: 12.9vw;
       @include m-lg{
         display: flex;
         flex-direction: column;
@@ -670,40 +720,4 @@
     font-weight: 400;
     font-size: 0.8vw;
   }
-}
-
-.video-container {
-  position: relative;
-  display: block;
-}
-
-.volume-controls {
-  position: absolute;
-  right: 2%;
-  bottom: 2%;
-  transition: 0.3s all;
-  opacity: 0.7;
-  svg {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  &:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-
-  .unmute-icon {
-    display: none;
-  }
-
-  &.home_audio {
-    margin-top: initial;
-    z-index: 3;
-  }
-}
-
-.imagesVideo{
-  display: flex;
-  width: 100%;
 }

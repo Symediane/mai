@@ -21,7 +21,6 @@ html {
 }
 
 body {
-  line-height: 140%;
   margin: 0;
   height: 100vh;
   scroll-behavior: smooth;
@@ -35,10 +34,7 @@ body {
   font-size: 0.95vw;
   font-style: normal;
   font-weight: 200;
-  line-height: 1.4;
-  @include m-xl {
-    line-height: 2rem;
-  }
+  line-height: 1.5;
   @include m-lg {
     overflow-x: hidden;
     overflow-y: auto;
