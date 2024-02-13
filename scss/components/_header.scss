@@ -1,25 +1,3 @@
-.page-id-20 .header{
-  &__content{
-    margin-top: initial;
-  }
-  &__menu__nav{
-    color: $primary;
-  }
-  a:hover, .current-menu-item a{
-    color: $white;
-  }
-  &__title {
-    color: $black;
-  }
-  &__burger {
-    .icon {
-      span {
-        background-color: $black;
-      }
-    }
-  }
-}
-
 .header {
   position: relative;
   $header: &;
@@ -40,11 +18,21 @@
   &:hover{
     opacity: 1;
     transform: translateY(0);
+
+    a{
+      color: $white;
+    }
     .header__content{
       &::after{
         opacity: 1;
       }
     }
+  }
+  .logo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
   &__title {
     position: absolute;
@@ -236,7 +224,7 @@
     }
   }
   a{
-    color: $white;
+    color: $black;
   }
   &__burger {
     position: relative;

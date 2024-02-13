@@ -1,0 +1,17 @@
+.vertical-scroll {
+
+  @include lg {
+    height: 100vh;
+    .main-content{
+      width: 100vw;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  .main-content {
+    background-image: url(../images/bg-press.png);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  }
+}

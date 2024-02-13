@@ -44,7 +44,6 @@ if (is_page(20)) {
   }
 
   #wpadminbar {
-    display: none;
     top: unset;
     bottom: 0;
     transition: 0.3s all;
@@ -73,7 +72,7 @@ if (is_page(20)) {
     $phone = get_field('phone', 'option');
     $lien_contact = get_field('lien_contact', 'option');
   ?>
-  <main<?= $enable_horizontal_scroll ? " data-scroll-container" : "" ?>>
+  <main<?= $enable_horizontal_scroll ? " data-scroll-container" : " class='vertical-scroll'" ?>>
   <div id="main-content" class="main-content">
   <header class="header" >
     <div class="header__content container">
@@ -94,7 +93,7 @@ if (is_page(20)) {
           </div>
             <div class="header__menu__menuOne" data-block-section>
               <?php wp_nav_menu(['theme_location' => 'main', 'menu_class' => 'header__menu__nav', 'container' => false]); ?>
-              <a href="<?= get_home_url(); ?>">mai</a>
+              <a href="<?= get_home_url(); ?>" class="logo">mai</a>
               <?php wp_nav_menu(['theme_location' => 'secondaire', 'menu_class' => 'header__menu__nav --secondary', 'container' => false]); ?>
             </div>
         </nav>
