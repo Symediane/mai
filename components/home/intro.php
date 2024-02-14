@@ -21,7 +21,7 @@ if ($video_desktop || $image) { ?>
         </video>
         <div class="volume-controls home_audio">
           <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
-          <span class="unmute-icon"id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
+          <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
         </div>
       <?php } else { ?>
         <div class="image">

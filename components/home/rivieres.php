@@ -1,4 +1,4 @@
-<?php 
+<?php
 $first_block = get_sub_field('premier_block');
 $firstTexte = $first_block['texte'];
 $imagesRepeteur = $first_block['image_video'];
@@ -28,14 +28,14 @@ $image = $imagesGroup['image'];
               if ($videoId) {
                 $videoUrl = wp_get_attachment_url($videoId); ?>
                 <?php if (!empty($linkRepeater['url'])) { ?>
-                  <a href="<?= esc_url($linkRepeater['url']); ?>" class="video-container">
+                  <a href="<?= esc_url($linkRepeater['url']); ?>" class="video-container" target="_blank">
                 <?php } else { ?>
                   <div class="video-container">
                 <?php } ?>
                   <video src="<?= $videoUrl; ?>" class="video" muted="" loop="" playsinline="">
                     <track src="" kind="captions">
                   </video>
-                  <div class="volume-controls">  
+                  <div class="volume-controls">
                     <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
                     <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
                   </div>
@@ -46,7 +46,7 @@ $image = $imagesGroup['image'];
                 <?php } ?>
               <?php } elseif ($imageId) { ?>
                 <?php if (!empty($linkRepeater['url'])) { ?>
-                  <a href="<?= esc_url($linkRepeater['url']); ?>" class="image">
+                  <a href="<?= esc_url($linkRepeater['url']); ?>" class="image" target="_blank">
                 <?php } else { ?>
                   <div class="image">
                 <?php } ?>
@@ -56,7 +56,7 @@ $image = $imagesGroup['image'];
                 <?php } else { ?>
                   </div>
                 <?php } ?>
-              <?php } 
+              <?php }
             } ?>
         </div>
       </div>
@@ -70,14 +70,14 @@ $image = $imagesGroup['image'];
           <div class="imagesVideo">
             <?php if ($video) { ?>
               <?php if (!empty($linksGroup['url'])) { ?>
-                <a href="<?= esc_url($linksGroup['url']); ?>" class="video-container">
+                <a href="<?= esc_url($linksGroup['url']); ?>" class="video-container" target="_blank">
               <?php } else { ?>
                 <div class="video-container">
               <?php } ?>
                 <video src="<?= $video['url']; ?>" class="video" muted="" loop="" playsinline="">
                   <track src="" kind="captions">
                 </video>
-                <div class="volume-controls">  
+                <div class="volume-controls">
                   <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
                   <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
                 </div>
@@ -88,7 +88,7 @@ $image = $imagesGroup['image'];
               <?php } ?>
             <?php } else { ?>
               <?php if (!empty($linksGroup['url'])) { ?>
-                <a href="<?= esc_url($linksGroup['url']); ?>" class="image">
+                <a href="<?= esc_url($linksGroup['url']); ?>" class="image" target="_blank">
               <?php } else { ?>
                 <div class="image">
               <?php } ?>

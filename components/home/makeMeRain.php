@@ -32,7 +32,7 @@ $link = $troisieme_block['lien'];
         <div class="imageVideo">
           <?php if ($videoOne) { ?>
             <?php if (!empty($lien_externeOne['url'])) { ?>
-              <a href="<?= esc_url($lien_externeOne['url']); ?>"class="video-container">
+              <a href="<?= esc_url($lien_externeOne['url']); ?>" class="video-container" target="_blank">
             <?php } else { ?>
               <div class="video-container">
             <?php } ?>
@@ -50,7 +50,7 @@ $link = $troisieme_block['lien'];
             <?php } ?>
           <?php } else { ?>
             <?php if (!empty($lien_externeOne['url'])) { ?>
-              <a href="<?= esc_url($lien_externeOne['url']); ?>" class="image">
+              <a href="<?= esc_url($lien_externeOne['url']); ?>" class="image" target="_blank">
             <?php } else { ?>
               <div class="image">
             <?php } ?>
@@ -74,7 +74,7 @@ $link = $troisieme_block['lien'];
         <div class="imageVideo">
           <?php if ($videoTwo) { ?>
             <?php if (!empty($lien_externeTwo['url'])) { ?>
-              <a href="<?= esc_url($lien_externeTwo['url']); ?>"class="video-container">
+              <a href="<?= esc_url($lien_externeTwo['url']); ?>" class="video-container" target="_blank">
             <?php } else { ?>
               <div class="video-container">
             <?php } ?>
@@ -92,7 +92,7 @@ $link = $troisieme_block['lien'];
             <?php } ?>
           <?php } else { ?>
             <?php if (!empty($lien_externeTwo['url'])) { ?>
-              <a href="<?= esc_url($lien_externeTwo['url']); ?>" class="image">
+              <a href="<?= esc_url($lien_externeTwo['url']); ?>" class="image" target="_blank">
             <?php } else { ?>
               <div class="image">
             <?php } ?>
@@ -113,7 +113,7 @@ $link = $troisieme_block['lien'];
         <div class="imageVideo">
           <?php if ($videoThird) { ?>
             <?php if (!empty($lien_externeThird['url'])) { ?>
-              <a href="<?= esc_url($lien_externeThird['url']); ?>"class="video-container">
+              <a href="<?= esc_url($lien_externeThird['url']); ?>" class="video-container" target="_blank">
             <?php } else { ?>
               <div class="video-container">
             <?php } ?>
@@ -131,7 +131,7 @@ $link = $troisieme_block['lien'];
             <?php } ?>
           <?php } else { ?>
             <?php if (!empty($lien_externeThird['url'])) { ?>
-              <a href="<?= esc_url($lien_externeThird['url']); ?>" class="image">
+              <a href="<?= esc_url($lien_externeThird['url']); ?>" class="image" target="_blank">
             <?php } else { ?>
               <div class="image">
             <?php } ?>

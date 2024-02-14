@@ -315,23 +315,6 @@ function getPictureMedia($imageId, $size, $params = [])
   return $html;
 }
 
-function getSvg($url)
-{
-  if ($url){
-    $username = 'demo6';
-    $password = 'symediane';
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $svg = curl_exec($ch);
-    curl_close($ch);
-    return $svg;
-  }
-}
-
-
 function removeCF7RecaptchaScript()
 {
   if (is_page() || is_single() || is_home() || is_category() || is_tag()) {

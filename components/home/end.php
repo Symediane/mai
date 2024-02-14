@@ -18,7 +18,7 @@ $films = get_sub_field('films');
   <p class="home__end__films">
     <?php foreach ($films as $film_item) {
       $film = $film_item['film']; ?>
-      <a href="<?= $film['url']; ?>" class="film">
+      <a href="<?= $film['url']; ?>" class="film" target="_blank">
         <?= $film['title']; ?>
       </a>
     <?php } ?>
