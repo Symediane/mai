@@ -147,7 +147,7 @@
       justify-content: space-between;
       @include m-lg{
         flex-direction: column;
-        height: calc(100svh - 6.4rem);
+        height: calc(100vh - 6.4rem);
         overflow-y: auto;
         justify-content: initial;
         background-color: $white;

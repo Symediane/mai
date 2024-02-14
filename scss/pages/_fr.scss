@@ -1,0 +1,11 @@
+.lang-fr {
+  @include lg {
+    .home__videoPoster > * + * {
+      margin-left: 3vw;
+    }
+
+    .home__suite::before {
+      left: 5vw;
+    }
+  }
+}

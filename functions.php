@@ -329,3 +329,9 @@ function removeCF7RecaptchaScript()
 add_action('wp_head', 'removeCF7RecaptchaScript', 0);
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+add_filter('body_class', 'append_language_class');
+function append_language_class($classes){
+  $classes[] = 'lang-'.ICL_LANGUAGE_CODE;
+  return $classes;
+}
