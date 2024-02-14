@@ -23,6 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if ($muteIcon && $unmuteIcon) {
           $muteIcon.addEventListener("click", (event) => {
+            $videos.forEach(($v) => {
+              const $mIcon = $v.parentElement.querySelector(".mute-icon");
+              const $uIcon = $v.parentElement.querySelector(".unmute-icon");
+              $v.muted = true;
+              $mIcon.style.display = "block";
+              $uIcon.style.display = "none";
+            });
             event.preventDefault();
             $video.muted = false;
             $muteIcon.style.display = "none";

@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const $header = document.querySelector(".header");
 
   let lastScrollTop = 0;
-  document.querySelector("body").addEventListener("scroll",() => {
-      console.log($header);
-      let st = document.querySelector("body").scrollTop;
+  window.addEventListener("scroll",() => {
+      let st = document.documentElement.scrollTop;
       if (st <= 100) {
         $header.classList.remove("--white");
       }
