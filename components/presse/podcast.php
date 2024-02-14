@@ -13,15 +13,12 @@ usort($podcast, 'comparePodcasts');
         Podcast
     </div>
     <?php foreach ($podcast as $podcast_item) {
-        $magazine = $podcast_item['magazine'];
-        $titre = $podcast_item['titre']; 
-        $lien_externe = $podcast_item['lien_externe'];
-        ?>
-        <?php if (isset($lien_externe['url']) && $lien_externe['url']) { ?>
-            <a href="<?= esc_url($lien_externe['url']); ?>" target="_blank" class="flex">
-        <?php } else { ?>
-            <div class="flex">
-        <?php } ?>
+    $magazine = $podcast_item['magazine'];
+    $titre = $podcast_item['titre'];
+    $lien = $podcast_item['lien_externe'];
+    $fichier = $podcast_item['fichier'];
+    if ($lien || $fichier) { ?>
+        <a href="<?= $lien ? $lien : $fichier['url'] ?>" target="_blank" class="flex">
             <?php if ($magazine) { ?>
                 <div class="magazine">
                     <?= $magazine; ?>
@@ -35,10 +32,7 @@ usort($podcast, 'comparePodcasts');
                     <?= $titre; ?>
                 </div>
             <?php } ?>
-        <?php if (isset($lien_externe['url']) && $lien_externe['url']) { ?>
-            </a>
-        <?php } else { ?>
-            </div>
-        <?php } ?>
+        </a>
     <?php } ?>
+<?php } ?>
 </div>

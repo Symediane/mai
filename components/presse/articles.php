@@ -35,23 +35,22 @@ $articles = get_field('articles');
     $citation = $article['citation'];
     $magazine = $article['magazine'];
     $duree = $article['duree'];
-    ?>
-    <div class="presse__articles__article <?= $alignment ?>">
-      <?php if ($citation) { ?>
-        <div class="citation">
-          <?= $citation; ?>
-        </div>
-      <?php } if ($magazine) { ?>
-        <div class="magazine">
-          <?= $magazine; ?>
-        </div>
-      <?php } if ($duree) { ?>
-        <div class="duree">
-          <?= $duree; ?>
-        </div>
-      <?php } ?>
-    </div>
-    <?php
-  }
+    $lien = $article['lien'];
+    $fichier = $article['fichier'];
+
+    if ($lien || $fichier) {
+        echo '<a href="' . ($lien ? $lien : $fichier['url']) . '" target="_blank" class="presse__articles__article ' . $alignment . '">';
+        if ($citation) {
+            echo '<div class="citation">' . $citation . '</div>';
+        }
+        if ($magazine) {
+            echo '<div class="magazine">' . $magazine . '</div>';
+        }
+        if ($duree) {
+            echo '<div class="duree">' . $duree . '</div>';
+        }
+        echo '</a>';
+    }
+}
   ?>
 </div>
