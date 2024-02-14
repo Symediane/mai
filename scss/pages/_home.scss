@@ -349,6 +349,19 @@
             text-decoration: underline;
           }
         }
+
+        .lien{
+          &__desktop{
+            @include m-lg {
+              display: none;
+            }
+          }
+          &__mobile{
+            @include lg {
+              display: none;
+            }
+          }
+        }
       }
     }
     .texte {

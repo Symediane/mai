@@ -57,9 +57,14 @@ $texteSuite = get_sub_field('texte');
         </div>
         <?php foreach ($liens as $lien) {
           $texte = $lien['texte_lien'];
-          $file = $lien['fichier']; ?>
+          $file = $lien['fichier'];
+          $mobile = $lien['version_mobile'];
+          ?>
           <?php if (!empty($file['url'])) { ?>
-            <a href="<?= esc_url($file['url']); ?>" class="lien" target="_blank"><?= $texte; ?> </a>
+            <a href="<?= esc_url($file['url']); ?>" class="<?= !empty($mobile['url']) ? 'lien__desktop ' : ''; ?>lien" target="_blank"><?= $texte; ?> </a>
+          <?php } ?>
+          <?php if (!empty($mobile['url'])) { ?>
+            <a href="<?= esc_url($mobile['url']); ?>" class="lien__mobile lien" target="_blank"><?= $texte; ?> </a>
           <?php } ?>
         <?php } ?>
       </div>
