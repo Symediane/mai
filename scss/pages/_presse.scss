@@ -1,6 +1,14 @@
 
 .presse{
   width: 100%;
+  a.flex{
+    &:not(:last-child){
+      margin-bottom: 1rem;
+      @include m-lg{
+        margin-bottom: 3rem;
+      }
+    }
+  }
   &__articles{
     padding: 10rem;
     display: grid;
@@ -79,26 +87,31 @@
       padding-right: 2rem;
     }
     &__title{
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       margin-bottom: 3rem;
       text-transform: uppercase;
       color: #000;
       display: flex;
       justify-content: center;
+      @include m-lg{
+        font-size: 1.8rem;
+      }
     }
     .flex{
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      @include m-lg{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
       .titre, .magazine{
         font-size: 1.4rem;
         font-style: normal;
         font-weight: 400;
-        @include m-md{
-          font-size: 0.8rem;
-        }
       }
       .points {
         flex-grow: 1;
@@ -106,6 +119,9 @@
         margin: 0 0.2rem;
         position: relative;
         top: -0.5rem;
+        @include m-lg{
+          display: none;
+        }
       }
     }
   }
