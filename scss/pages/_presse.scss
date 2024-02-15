@@ -72,7 +72,6 @@
     display: flex;
     flex-direction: column;
     gap: 7rem;
-    margin-bottom: 15rem;
   }
   &__content{
     padding-left: 25rem;
@@ -132,6 +131,17 @@
           display: none;
         }
       }
+    }
+  }
+  .screenHeight{
+    padding: 3rem 0;
+    height: 100svh;
+    max-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include lg {
+      height: 40.5vw;
     }
   }
 }

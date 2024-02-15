@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       }
-    }, 10);
+    }, 200);
   }
 
 });

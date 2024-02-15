@@ -1,4 +1,4 @@
-<?php 
+<?php
 $image = get_sub_field('image');
 $texte = get_sub_field('texte');
 $texteSuite = get_sub_field('texte_suite');
@@ -9,7 +9,7 @@ $texteSuite = get_sub_field('texte_suite');
       <?= $texteSuite; ?>
     </div>
     <?php if ($image) { ?>
-      <div class="image">
+      <div class="image" id="soon">
         <?= getPictureMedia($image['id'], 'full'); ?>
       </div>
       <?php } ?>
