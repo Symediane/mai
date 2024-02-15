@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  window.onload = function () {
-    var presseElement = document.querySelector(".presse");
+  const $bg = document.querySelector(".vertical-scroll .main-content");
 
-    if (presseElement) {
-      var initialBackgroundSize = 100;
+  if ($bg) {
+    $bg.addEventListener('scroll', function() {
+      console.log("scroll desktop");
+      const yPos = -$bg.scrollTop / 5;
+      $bg.style.backgroundPosition = `50% ${yPos}px`;
+    });
 
-      window.addEventListener("scroll", function () {
-        var newBackgroundSize = initialBackgroundSize + window.scrollY * 0.1;
-        presseElement.style.backgroundSize = newBackgroundSize + "%";
-      });
-    }
-  };
+    window.addEventListener('scroll', function() {
+      console.log("scroll mobile");
+      const yPos = -window.scrollY / 5;
+      $bg.style.backgroundPosition = `50% ${yPos}px`;
+    });
+  }
 });

@@ -16,6 +16,7 @@ get_header();
       <?php
         get_template_part('/components/presse/presse');
         get_template_part('/components/presse/podcast');
+        get_template_part('/components/presse/contact');
       ?>
     </div>
   </div>

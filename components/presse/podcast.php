@@ -8,9 +8,9 @@ function comparePodcasts($a, $b) {
 usort($podcast, 'comparePodcasts');
 ?>
 
-<div class="presse__podcast">
-    <div class="presse__podcast__title">
-        Podcast
+<div class="presse__content">
+    <div class="presse__content__title">
+        <?= __("Podcast", 'symediane'); ?>
     </div>
     <?php foreach ($podcast as $podcast_item) {
     $magazine = $podcast_item['magazine'];

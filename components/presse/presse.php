@@ -8,9 +8,9 @@ function compareMagazines($a, $b) {
 usort($presse, 'compareMagazines');
 ?>
 
-<div class="presse__presse">
-    <div class="presse__presse__title">
-        Presse
+<div class="presse__content">
+    <div class="presse__content__title">
+        <?= __("Presse", 'symediane'); ?>
     </div>
     <?php foreach ($presse as $press) {
     $magazine = $press['magazine'];
