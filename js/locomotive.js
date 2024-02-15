@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header");
   const horizontal = document.querySelector("[data-scroll-container]");
-
+  
   if(horizontal) {
     setTimeout(() => {
       var scroll = new LocomotiveScroll({

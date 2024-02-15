@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
    const $burger = document.querySelector(".header__burger");
    const $close = document.querySelector(".header__close");
 
+   const $soon = document.querySelector(".soon a");
+
    if ($burger) {
       $burger.addEventListener("click", () => {
          toggle();
@@ -22,6 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
          toggle();
       }
    });
+
+   if ($soon) {
+      $soon.addEventListener("click", () => {
+         toggle();
+      });
+   }
 
    function toggle() {
       $header.classList.toggle("--active");

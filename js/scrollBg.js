@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', function() {
       console.log("scroll mobile");
-      const yPos = -window.scrollY / 5;
+      const yPos = -window.scrollY / 10;
       $bg.style.backgroundPosition = `50% ${yPos}px`;
     });
   }

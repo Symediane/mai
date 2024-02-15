@@ -103,6 +103,7 @@
   &__presentation {
     @include m-lg {
       height: calc(100svh - 6rem);
+      min-height: 130vw;
     }
     &::before {
       background-image: url("../images/first_bg.jpg");
@@ -733,6 +734,7 @@
     }
     @include m-lg {
       height: calc(100svh - 6rem);
+      min-height: 130vw;
     }
     .image {
       width: 100vw;
