@@ -27,7 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
    if ($soon) {
       $soon.addEventListener("click", () => {
-         toggle();
+        $header.classList.remove("--active");
+        $menu_top.classList.remove("--active");
+        $burger.classList.remove("--active");
+        $menu.classList.remove("--active");
+        $nav.classList.remove("--active");
+        $navTwo.classList.remove("--active");
+        $close.classList.remove("--active");
       });
    }
 
