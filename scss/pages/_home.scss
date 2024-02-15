@@ -653,9 +653,10 @@
         top: 117vw;
         width: 100vw;
         z-index: 0;
-        height: 130vw;
+        height: 160vw;
         left: 0;
-        background-size: cover;
+        background-size: contain;
+        background-position: center top;
       }
     }
     &__texteSuite {
@@ -697,7 +698,7 @@
       }
       picture {
         @include m-md {
-          height: 43vh;
+          height: 90vw;
         }
       }
     }
