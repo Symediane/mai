@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if ($videos) {
     $videos.forEach(($video) => {
+
       setTimeout(() => {
         var observer = new IntersectionObserver(
           entries => {

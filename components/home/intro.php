@@ -8,9 +8,17 @@ $image = $video['image'];
 if ($video_desktop || $image) { ?>
   <section class="section home home__intro video-container" data-block-section>
     <?php if ($video_desktop) { ?>
-        <video src="<?= $video_desktop['url']; ?>" class="home__video" muted=""   loop="" playsinline="">
+      <div class="video__desktop">
+      <video src="<?= $video_desktop['url']; ?>" class="home__video" muted=""   loop="" playsinline="">
           <track src="" kind="captions">
         </video>
+        <div class="volume-controls home_audio">
+          <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
+          <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
+        </div>
+      </div>
+
+      <div class="video__mobile">
         <video src="<?php
         if ($video_mobile) {
           echo $video_mobile['url'];
@@ -22,6 +30,7 @@ if ($video_desktop || $image) { ?>
         <div class="volume-controls home_audio">
           <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
           <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
+        </div>
         </div>
       <?php } else { ?>
         <div class="image">
