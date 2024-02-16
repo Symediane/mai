@@ -1,0 +1,43 @@
+
+.menu-item-has-children{
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  & > a {
+    pointer-events: none;
+  }
+  &:hover{
+    .sub-menu{
+      opacity: 1;
+    }
+  }
+  .sub-menu{
+    position: absolute;
+    opacity: 0;
+    text-align: center;
+    transition: 0.3s all;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    @include lg{
+      background: $white;
+      padding: 1rem;
+      a{
+        color: $black;
+        font-size: 1.4rem;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @include m-lg{
+      position: static;
+      opacity: 1;
+      transition: none;
+      transform: none;
+      width: 100%;
+    }
+  }
+
+}
