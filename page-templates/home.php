@@ -33,6 +33,8 @@ get_header();
           get_template_part('/components/home/poesie');
         } elseif ($layout === 'end') {
           get_template_part('/components/home/end');
+        } elseif ($layout === 'fan') {
+          get_template_part('/components/home/fan');
         }
       }
     }

@@ -144,12 +144,12 @@
           picture {
             height: 100%;
           }
-        }
+
         &::before {
           content: "";
           position: absolute;
-          width: 100%;
-          height: 100%;
+          width: 100vw;
+          height: 130vw;
           background-image: url("../images/first_bg.jpg");
           -webkit-background-size: contain;
           -moz-background-size: contain;
@@ -159,9 +159,10 @@
           z-index: 1;
           mix-blend-mode: multiply;
           transform: rotate(-100deg);
-          top: -77vw;
-          left: 0;
+          top: -57vw;
+          left: -25vw;
         }
+      }
       }
     }
     &__texte {
@@ -201,9 +202,10 @@
         top: 0;
         width: 100vw;
         z-index: 0;
-        height: 300vw;
+        height: 120%;
         left: 0;
         background-size: cover;
+        background-position: center top;
       }
     }
     &__firstBlock {
@@ -303,6 +305,7 @@
     }
   }
   &__videoPoster {
+
     & > * + * {
       @include lg {
         margin-left: 7.5vw;
@@ -312,11 +315,22 @@
       gap: 10vw;
       margin-top: 5vw;
       margin-bottom: 10vw;
-    }
-    @include m-lg {
       display: flex;
       flex-direction: column;
       align-items: center;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url("../images/01-mobile.jpg");
+        width: 100vw;
+        z-index: 0;
+        background-size: cover;
+        background-position: center bottom;
+      }
     }
     &__posterTexte {
       display: flex;
@@ -343,7 +357,8 @@
           padding: 5vw 3vw;
           align-self: flex-end;
           gap: 4vw;
-          width: 45%;
+          width: 100%;
+          text-align: center;
         }
         a {
           &:hover {
@@ -351,13 +366,13 @@
           }
         }
 
-        .lien{
-          &__desktop{
+        .lien {
+          &__desktop {
             @include m-lg {
               display: none;
             }
           }
-          &__mobile{
+          &__mobile {
             @include lg {
               display: none;
             }
@@ -370,10 +385,11 @@
       align-items: center;
       @include m-lg {
         position: relative;
-        width: 55vw;
-        padding-right: 3vw;
-        left: 22%;
+        width: 90vw;
+        left: 0;
         z-index: 1;
+        text-align: center;
+        justify-content: center;
       }
     }
   }
@@ -392,14 +408,15 @@
       z-index: -1;
       height: 100%;
       @include m-lg {
-        background-image: url("../images/02-mobile.jpg");
+        /*background-image: url("../images/02-mobile.jpg");
         top: -105vw;
         width: 100vw;
         z-index: 0;
         height: 100%;
         left: 0;
         background-size: cover;
-        background-position: center top;
+        background-position: center top;*/
+        display: none;
       }
     }
     &__content {
@@ -639,25 +656,26 @@
     &::before {
       background-image: url("../images/last_bg.jpg");
       background-size: contain;
-      background-position: center;
+      background-position: right center;
       background-repeat: no-repeat;
       content: "";
       position: absolute;
-      left: 8vw;
+      right: -8vw;
       opacity: 1;
-      width: 200vw;
+      width: 100%;
       top: 3%;
       z-index: -1;
       height: 100%;
       @include m-lg {
         background-image: url("../images/03-mobile.jpg");
-        top: 117vw;
+        bottom: -29vw;
+        top: auto;
         width: 100vw;
         z-index: 0;
-        height: 160vw;
+        height: 100%;
         left: 0;
         background-size: contain;
-        background-position: center top;
+        background-position: center bottom;
       }
     }
     &__texteSuite {

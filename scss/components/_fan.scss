@@ -1,0 +1,38 @@
+.fan{
+  position: relative;
+  align-items: center;
+  z-index: 1;
+  @include m-lg{
+    flex-direction: column;
+    padding: 0 4vw 12vw;
+    width: 100%;
+  }
+  @include lg{
+    height: 100%;
+    padding: 0 3vw;
+  }
+  picture{
+    position: relative;
+    @include lg{
+      height: 40.5vw;
+    }
+    img{
+      position: relative;
+      object-fit: contain;
+      @include lg{
+        height: 100%;
+        width: auto;
+      }
+      @include m-lg{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__texte{
+    @include m-lg{
+      padding-top: 6vw;
+      text-align: center;
+    }
+  }
+}
