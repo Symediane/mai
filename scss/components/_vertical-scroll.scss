@@ -1,8 +1,21 @@
 .vertical-scroll {
-
   @include lg {
+    .header {
+      position: fixed;
+      top: 0;
+      @media (min-height: 40.5vw) {
+        top: 50%;
+        transform: translateY(calc(-40.5vw / 2));
+      }
+      &.--white {
+        opacity: 0;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
     height: 100svh;
-    .main-content{
+    .main-content {
       width: 100vw;
       overflow-y: auto;
       overflow-x: hidden;
@@ -10,9 +23,9 @@
   }
   .main-content {
     background-image: url(../images/bg-press.jpg);
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 }
