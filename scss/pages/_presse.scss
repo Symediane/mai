@@ -10,7 +10,7 @@
     }
   }
   &__articles{
-    padding: 10rem;
+    padding: 10rem 2rem;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -32,6 +32,9 @@
       width: 40rem;
       @include m-xl{
         width: 30rem;
+      }
+      @include m-lg{
+        width: 100%;
       }
       .citation, .duree{
         font-size: 1.5rem;
