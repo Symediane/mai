@@ -11,10 +11,27 @@
     height: 100%;
     padding: 0 3vw;
   }
-  picture{
+  .image{
     position: relative;
     @include lg{
       height: 40.5vw;
+      width: auto;
+    }
+    &__desktop{
+      @include m-lg{
+        display: none;
+      }
+    }
+    &__mobile{
+      @include lg{
+        display: none;
+      }
+    }
+  }
+  picture{
+    position: relative;
+    @include lg{
+      height: 100%;
     }
     img{
       position: relative;
