@@ -23,7 +23,7 @@
       background: $white;
       padding: 1rem;
       a{
-        color: $black;
+        color: $black!important;
         font-size: 1.4rem;
         &:hover{
           text-decoration: underline;

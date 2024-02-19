@@ -9,7 +9,7 @@ if ($video_desktop || $image) { ?>
   <section class="section home home__intro video-container" data-block-section>
     <?php if ($video_desktop) { ?>
       <div class="video__desktop">
-      <video src="<?= $video_desktop['url']; ?>" class="home__video" muted=""   loop="" playsinline="">
+      <video autoplay src="<?= $video_desktop['url']; ?>" class="home__video" muted="" loop="" playsinline="">
           <track src="" kind="captions">
         </video>
         <div class="volume-controls home_audio">
@@ -19,7 +19,7 @@ if ($video_desktop || $image) { ?>
       </div>
 
       <div class="video__mobile">
-        <video src="<?php
+        <video autoplay src="<?php
         if ($video_mobile) {
           echo $video_mobile['url'];
         } else {

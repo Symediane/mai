@@ -20,13 +20,9 @@ $texteSuite = get_sub_field('texte');
           <?php } else { ?>
             <div class="video-container">
           <?php } ?>
-            <video src="<?= $video['url']; ?>" class="video" muted="" loop="" playsinline="">
+            <video autoplay controls src="<?= $video['url']; ?>" class="video" muted="" loop="" playsinline="">
               <track src="" kind="captions">
             </video>
-            <div class="volume-controls">
-              <span class="mute-icon" id="mute-icon"><?= get_template_part('/components/svg/mute'); ?></span>
-              <span class="unmute-icon" id="unmute-icon"><?= get_template_part('/components/svg/unmute'); ?></span>
-            </div>
           <?php if (!empty($lien_externe['url'])) { ?>
             </a>
           <?php } else { ?>
